@@ -16,14 +16,14 @@ describe Emque::Producing::Configuration do
   it "does not allow rabbitmq_options to be overwritten" do
     expect {
       subject.rabbitmq_options = {:requires_confirmation => false}
-    }.to raise_error
+    }.to raise_error NoMethodError
   end
 
   describe "middleware" do
     it "does not allow direct assignment" do
       expect {
         subject.middleware = proc { |_| true }
-      }.to raise_error
+      }.to raise_error NoMethodError
     end
 
     it "#use raises a ConfigurationError if the first arg is not callable" do

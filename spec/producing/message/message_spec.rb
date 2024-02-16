@@ -152,10 +152,6 @@ describe Emque::Producing::Message do
     end
   end
 
-  describe "#retry" do
-    pending
-  end
-
   it "validates the message for missing attributes" do
     message = TestMessage.new()
     expect(message).to_not be_valid
